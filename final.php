@@ -14,7 +14,7 @@
                 <div class="login-clean">
                         <form action="login.php" method="post">
                                 <h2 class="sr-only">Login Form</h2>
-								<h2>CONGRATULATIONS!!!!</h2>
+								<h2>CONGRATULATIONS!!!</h2>
                                 <hr>  
 								<a href="." class="btn btn-primary btn-lg">Return Home</a>                                                 
                         </form>
