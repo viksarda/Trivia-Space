@@ -2,7 +2,7 @@
 <head>
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Viksagram</title>
+                <title>TRIVIA SPACE</title>
                 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
                 <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -14,7 +14,7 @@
                 <div class="login-clean">
                         <form action="login.php" method="post">
                                 <h2 class="sr-only">Login Form</h2>
-								<h1>Seminar 2</h1>
+								<h1>TRIVIA SPACE</h1>
                                 <hr>
 								<h3>You need to find your way through the level and know the correct answer in order to progress through the game</h3>
 								<h3>Some levels require you to collect the coins in order to be able to finish the level</h3>

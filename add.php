@@ -86,8 +86,7 @@ if(isset($_POST['delete'])){
    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Seminar 2</title>
-        <link rel="icon" href="assets/img/Logoicon.png">
+        <title>TRIVIA SPACE</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -100,11 +99,11 @@ if(isset($_POST['delete'])){
 			<form method="POST" action="add.php">
                         <h2> Add a question</h2>
 						<hr>
-						<p>
+						<p style="padding-right: 60px">
 							<label>Question Number:</label>
 							<input type="number" name="question_number" value="<?php echo $next;  ?>">
 						</p>
-						<p>
+						<p style="padding-right: 35px">
 							<label>Question Text:</label>
 							<input type="text" name="question_text">
 						</p>

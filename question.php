@@ -34,7 +34,7 @@
 ?>
 <html>
 <head>
-	<title>SEMINAR 2</title>
+	<title>TRIVIA SPACE</title>
     <link rel="stylesheet" type="text/css" href="assets\css\main.css">
     
 </head>
@@ -693,9 +693,15 @@ var speed=1
 document.addEventListener("keydown", move, false);
 document.addEventListener("keyup", noMove, false);
 
+
+
 function addenemy(x,y,xv,yv,minx=0,maxx=100,miny=0,maxy=100) {
-	enemies[enemylevel].push({'x':x,'y':y,'xv':xv/size,'yv':yv/size,'minx':minx,'maxx':maxx,'miny':miny,'maxy':maxy})
+	enemies[enemylevel].push({'x':x,'y':y,'xv':xv/size,
+    'yv':yv/size,'minx':minx,'maxx':maxx,'miny':miny,
+    'maxy':maxy})
 }
+
+
 
 var enemies = [[],[],[],[],[],[],[],[]]
 var enemylevel = 2
