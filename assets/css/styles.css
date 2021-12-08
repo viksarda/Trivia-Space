@@ -1,0 +1,486 @@
+@media (min-width:1200px) {
+  form.navbar-form.navbar-left {
+    min-width:0;
+    display:inline;
+    width:56%;
+    margin:8px 0px 0px -10px;
+  }
+}
+
+@media (max-width:1199px) {
+  form.navbar-form.navbar-left {
+    width:47%;
+    margin:8px 0px 0px -10px;
+  }
+}
+
+@media (max-width:991px) {
+  form.navbar-form.navbar-left {
+    width:44%;
+  }
+}
+
+div.dropdown {
+  float:right;
+}
+
+@media (max-width:767px) {
+  form {
+    width:98%;
+    margin:0px auto;
+  }
+}
+
+h1.text-left {
+  margin:0px auto 0px auto;
+  font-size:28px;
+  color:#FFF;
+  padding:3px 0px 0px 0px;
+}
+
+@media (max-width:767px) {
+  input.form-control {
+    background-color:#FFF;
+    border:1px solid #f2f2f2;
+  }
+}
+
+@media (max-width:767px) {
+  div .searchbox {
+    position:relative;
+    top:6px;
+  }
+}
+
+i.glyphicon.glyphicon-search {
+  position:absolute;
+  top:11px;
+  left:8px;
+  color:#b1afaf;
+}
+
+@media (max-width:767px) {
+  .searchbox input[type="text"] {
+    padding:0px 25px;
+    border-radius:0px;
+  }
+}
+
+.form-control:focus {
+  border-color:#c1bfbf;
+  outline:0;
+  -webkit-box-shadow:none !important;
+  box-shadow:none !important;
+}
+
+@media (max-width:767px) {
+  header {
+    background-color:#ff4c4c;
+  }
+}
+
+.btn-link {
+  font-weight:bold;
+  color:#ffffff;
+  border-radius:0;
+}
+
+.btn-link:focus, .btn-link:hover {
+  color:#FFF;
+  text-decoration:underline;
+  background-color:transparent;
+}
+
+.searchbox input.form-control {
+  border-radius:0px;
+  width:100%;
+  padding:0px 0px 0px 25px;
+}
+
+div.searchbox {
+  position:relative;
+}
+
+@media (max-width:767px) {
+  div.dropdown {
+    position:absolute;
+    right:5px;
+    top:2px;
+  }
+}
+
+.navbar-brand {
+  float:left;
+  height:50px;
+  padding:3px 15px;
+  font-size:45px;
+  line-height:20px;
+}
+
+.blockquote {
+  padding:10px 20px;
+  margin:0 0 20px;
+  font-size:17.5px;
+  border-left:5px solid #FaFaFa;
+}
+
+.message-input-div {
+  position:absolute;
+  bottom:20px;
+  width:82%;
+}
+
+.postimg {
+  opacity: 0;
+  transition: all 2s ease-out;
+  width: 100%;
+}
+
+@media (max-width:767px) {
+  .message-input-div {
+    position:absolute;
+    bottom:-50px !important;
+    width:64% !important;
+  }
+}
+
+@media (max-width:991px) {
+  .message-input-div {
+    position:absolute;
+    bottom:-50px;
+    width:82%;
+  }
+}
+
+@media (max-width:1199px) {
+  .message-input-div {
+    position:absolute;
+    bottom:5px;
+    width:82%;
+  }
+}
+
+@media (min-width:1200px) {
+  .message-input-div {
+    position:absolute;
+    bottom:5px;
+    width:85%;
+  }
+}
+
+.msg-button-send {
+  background-image:url("none");
+  background-color:#da052b;
+  color:#fff;
+  padding:15px 28px;
+  margin:0px 0px 6px;
+  border:none;
+  box-shadow:none;
+  text-shadow:none;
+  opacity:0.9;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:0.4px;
+  line-height:1;
+  outline:none;
+  position:absolute;
+  bottom:15px;
+  right:17px;
+}
+
+.btn-follow{
+  width:100%;
+  background-image:url(&quot;none&quot;);
+  background-color:#da052b;
+  color:#fff;
+  padding:16px 32px;
+  margin:0px 0px 6px;
+  border:none
+  ;box-shadow:none;
+  text-shadow:none;
+  opacity:0.9;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:0.4px;
+  line-height:1;
+  outline:none;
+
+}
+
+.btn-unfollow{
+  width:100%;
+  background-image:url(&quot;none&quot;);
+  background-color:transparent;
+  color:#da052b;
+  padding:16px 32px;
+  border: 2px solid;
+  border-color:#da052b;
+  margin:0px 0px 6px;
+  box-shadow:none;
+  text-shadow:none;
+  opacity:0.9;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:0.4px;
+  line-height:1;
+  outline:none;
+}
+
+.btn-new-post{
+  width:100%;
+  background-image:url(&quot;none&quot;);
+  background-color:#da052b;
+  color:#fff;
+  padding:16px 32px;
+  margin:0px 0px 6px;
+  border:none;
+  box-shadow:none;
+  text-shadow:none;
+  opacity:0.9;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:0.4px;
+  line-height:1;
+  outline:none;
+
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;  
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;           
+}
+
+.btn-unfollow:hover {
+  background-color:#da052b;
+  color:#fff;
+}
+
+@media (max-width:767px) {
+  .msg-button-send {
+    bottom:-55px !important;
+  }
+}
+
+@media (max-width:991px) {
+  .msg-button-send {
+    bottom:-55px;
+  }
+}
+
+@media (max-width:1199px) {
+  .msg-button-send {
+    bottom:0px;
+  }
+}
+
+@media (min-width:1200px) {
+  .msg-button-send {
+    bottom:0px;
+  }
+}
+
+.drop-zone {
+  max-width:100%;
+  height: 200px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 4px dashed #da052b;
+  border-radius: 10px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#notfound .notfound-bg:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #da052b, white);
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 910px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 200px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 220px;
+  font-weight: 900;
+  margin: 0px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.notfound h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.notfound .home-btn, .notfound .contact-btn {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  padding: 13px 25px;
+  font-size: 18px;
+  border-radius: 40px;
+  margin: 7px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.notfound .home-btn:hover, .notfound .contact-btn:hover {
+  opacity: 0.9;
+}
+
+.notfound .home-btn {
+  color: rgba(255, 0, 36, 0.7);
+  background: #fff;
+}
+
+.notfound .contact-btn {
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.notfound-social {
+  margin-top: 25px;
+}
+
+.notfound-social>a {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0px 6px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.notfound-social>a:hover {
+  color: rgba(255, 0, 36, 0.7);
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 h1 {
+    font-size: 182px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 {
+    height: 146px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 146px;
+  }
+  .notfound h2 {
+    font-size: 16px;
+  }
+  .notfound .home-btn, .notfound .contact-btn {
+    font-size: 14px;
+  }
+}
