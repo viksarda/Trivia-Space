@@ -3,18 +3,14 @@ if(isset($_POST['submit'])){
 	$question_number = $_POST['question_number'];
 	$question_text = $_POST['question_text'];
 	$correct_choice = $_POST['correct_choice'];
-	// Choice Array
 	$choice = array();
 	$choice[1] = $_POST['choice1'];
 	$choice[2] = $_POST['choice2'];
 	$choice[3] = $_POST['choice3'];
 	$choice[4] = $_POST['choice4'];
 
-
 	$query = "ALTER table options AUTO_INCREMENT=1;";
 	$result = mysqli_query($connection,$query);
-
- // First Query for Questions Table
 
 	$query = "INSERT INTO questions (";
 	$query .= "question_number, question_text )";
@@ -24,7 +20,6 @@ if(isset($_POST['submit'])){
 
 	$result = mysqli_query($connection,$query);
 
-	//Validate First Query
 	if($result){
 		foreach($choice as $option => $value){
 			if($value != ""){
@@ -33,9 +28,7 @@ if(isset($_POST['submit'])){
 				}else{
 					$is_correct = 0;
 				}
-			
 
-				//Second Query for Choices Table
 				$query = "INSERT INTO options (";
 				$query .= "question_number,is_correct,coption)";
 				$query .= " VALUES (";
@@ -43,7 +36,6 @@ if(isset($_POST['submit'])){
 				$query .= ")";
 
 				$insert_row = mysqli_query($connection,$query);
-				// Validate Insertion of Choices
 
 				if($insert_row){
 					continue;
@@ -56,10 +48,6 @@ if(isset($_POST['submit'])){
 		}
 		$message = "Question has been added successfully";
 	}
-
-	
-
-
 
 
 }
@@ -88,13 +76,23 @@ if(isset($_POST['delete'])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TRIVIA SPACE</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-        <link rel="stylesheet" href="assets/css/styles.css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+
+		
         </head>
 
         <body style="background-color: #F1F7FC;">
+
+		<div class="w3-top">
+                    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                        <a href="." class="w3-bar-item w3-button">Trivia Space</a>
+                        <div class="w3-right w3-hide-small">
+                        <a href="add.php" class="w3-bar-item w3-button">Admin</a>
+                        </div>
+                    </div>
+        </div>
+
         <div class="login-clean">
 			<form method="POST" action="add.php">
                         <h2> Add a question</h2>
@@ -149,7 +147,7 @@ if(isset($_POST['delete'])){
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/drop-zone-.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <!-- <script src="assets/js/bs-animation.js"></script> -->
+
         </body>
 
 </html>

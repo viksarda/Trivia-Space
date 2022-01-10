@@ -1,26 +1,16 @@
 <?php 
 	include 'db.php';
 	session_start(); 
-	//Set Question Number
 	$number = $_GET['n'];
-
-	//Query for the Question
 	$query = "SELECT * FROM questions WHERE question_number = $number";
-
-	// Get the question
 	$result = mysqli_query($connection,$query);
 	$question = mysqli_fetch_assoc($result); 
-
-	//Get Choices
 	$query = "SELECT * FROM options WHERE question_number = $number";
 	$choices = mysqli_query($connection,$query);
 
-
-	// Get Total questions
 	$query = "SELECT * FROM questions";
 	$total_questions = mysqli_num_rows(mysqli_query($connection,$query));
  	
-
  	$query = "SELECT * FROM options WHERE question_number = $number AND is_correct = 1";
     $result = mysqli_query($connection,$query);
     $row = mysqli_fetch_assoc($result);
@@ -35,14 +25,31 @@
 <html>
 <head>
 	<title>TRIVIA SPACE</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets\css\main.css">
+   
     
 </head>
 <body>
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px; max-height:1050;" id="home">
+  <div width="1500" height="1050">
+  </div>
+</header>
+
+
+        <div class="w3-top">
+                    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                        <a href="." class="w3-bar-item w3-button">Trivia Space</a>
+                        <div class="w3-right w3-hide-small">
+                        <a href="add.php" class="w3-bar-item w3-button">Admin</a>
+                        </div>
+                    </div>
+        </div>
 
 
 
-<main>
+<main style="background-color: #f1f7fc">
+
 <div class="contain">
 	<div class="congrats">
     <div style="font-size: xx-large; font-weight: bold;">Level <?php echo $number; ?> of <?php echo $total_questions; ?> <label id='level'> Deaths: 0 </label></div>
@@ -61,29 +68,74 @@
                       
                 
                   <input type="hidden" name="number" value="<?php echo $number; ?>">
-
-
-
               </form>
           
-<canvas id="Canvas" width="1100" height="675"></canvas>
-<ul>
-<button class="button button1" onClick='skip(1)'>Level 1</button>
-<button class="button button1" onClick='skip(2)'>Level 2</button>
-<button class="button button1" onClick='skip(3)'>Level 3</button>
-<button class="button button1" onClick='skip(4)'>Level 4</button>
-<button class="button button1" onClick='skip(5)'>Level 5</button>
-</ul>
-
+        <canvas id="Canvas" width="1100" height="675"></canvas>
 
 	</div>
 </div>
+
+ 
+
+    <div class="w3-row-padding" style="padding-top: 1000px">
+        <div class="w3-container w3-padding-32">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">LEVELS</h3>
+        </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Level 1</div>
+                <img src="assets\img\lvl1.PNG"  style="width:95%; cursor: pointer;" onclick="javascript:window.location='http://localhost/quiz/question.php?n=1'">
+            </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Level 2</div>
+                <img src="assets\img\lvl2.PNG"  style="width:95%; cursor: pointer;" onclick="javascript:window.location='http://localhost/quiz/question.php?n=2'">
+            </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Level 3</div>
+                <img src="assets\img\lvl3.PNG"  style="width:95%; cursor: pointer;" onclick="javascript:window.location='http://localhost/quiz/question.php?n=3'">
+            </div>
+            </div>
+
+            <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Level 4</div>
+                <img src="assets\img\lvl4.PNG"  style="width:95%; cursor: pointer;" onclick="javascript:window.location='http://localhost/quiz/question.php?n=4'">
+            </div>
+            </div>
+
+    </div>
+            <div class="w3-row-padding">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Level 5</div>
+                <img src="assets\img\lvl5.PNG"  style="width:95%; cursor: pointer;" onclick="javascript:window.location='http://localhost/quiz/question.php?n=5'">
+            </div>
+            </div>
+
+
+    </div>
+
+</div>
+
 
 <script>
 var c = document.getElementById("Canvas");
 
 var ctx = c.getContext("2d");
 var size=30
+
+var audio = new Audio('assets/sounds/audio_file.mp3');
+var sound = new Audio('assets/sounds/sound.mp3');
+var csound = new Audio('assets/sounds/csound.mp3');
+
+audio.volume = 0.05;
+csound.volume = 0.5;
+audio.play();
+audio.loop=true;
 
 if(document.URL.indexOf("question.php?n=1") >= 0){ 
     var level=1
@@ -162,6 +214,8 @@ function moveEnemies() {
 	}
 }
 
+
+
 function collide(x,y) {
 	var i=0
     var player_rect={x:player['x'],y:player['y'],width:size*0.6,height:size*0.6}
@@ -188,6 +242,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
                 j++
@@ -212,6 +267,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
                 j++
@@ -235,6 +291,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
                 j++
@@ -258,6 +315,8 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                sound.play();
+                
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
                 j++
@@ -280,6 +339,7 @@ function collide(x,y) {
             deaths+=1
             numcoins=0
             j=0
+            sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
                 j++
@@ -294,6 +354,7 @@ function collide(x,y) {
         if (colliding(player_rect,coin_rect) && coin['collected']===0) {
         	coin['collected']=1
             numcoins+=1
+            csound.play();
         }
     i++
     }
@@ -302,7 +363,6 @@ function collide(x,y) {
 function skip(lv) {
 	level=lv
     window.location.replace("http://localhost/quiz/question.php?n=" + level);
- 
     numcoins=0
     player['x']=spawnpoints[level][0]
     player['y']=spawnpoints[level][1]
@@ -317,6 +377,7 @@ function collideEnemy(enemy) {
     	var block_rect={x:blocks[level][i]['x']*size,y:blocks[level][i]['y']*size,width:size,height:size}
     	if (colliding(enemy_rect,block_rect) && (blocks[level][i]['type']===1 || blocks[level][i]['type']===4)) {
         	return true
+            
         }
         i++
 	}
@@ -400,7 +461,7 @@ function addblocks(type,x1,y1,x2,y2) {
     }
 }
 
-var blocks=[[],[],[],[],[],[],[]]
+var blocks=[[],[],[],[],[],[]]
 var blocklevel = 1
 addblocks(1,7,2,10,2)
 addblocks(1,13,2,16,2)
@@ -703,7 +764,7 @@ function addenemy(x,y,xv,yv,minx=0,maxx=100,miny=0,maxy=100) {
 
 
 
-var enemies = [[],[],[],[],[],[],[],[]]
+var enemies = [[],[],[],[],[],[],[]]
 var enemylevel = 2
 addenemy(9,9,0,-0.5)
 addenemy(10,14,0,0.5)
@@ -717,6 +778,7 @@ addenemy(17,9,0,-0.5)
 addenemy(18,14,0,0.5)
 addenemy(19,9,0,-0.5)
 addenemy(20,14,0,0.5)
+
 var enemylevel = 3
 addenemy(13,5,0.7,0,13,19)
 addenemy(13,6,0.7,0,13,19)
@@ -749,6 +811,7 @@ addenemy(21,9,-1,0,10,21,0,0)
 addenemy(21,11,-1,0,10,21,0,0)
 addenemy(21,13,-1,0,10,21,0,0)
 addenemy(21,15,-1,0,10,21,0,0)
+
 
 
 function addcoin(x,y) {

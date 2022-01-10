@@ -10,6 +10,16 @@
                 <link rel="stylesheet" href="assets/css/styles.css">
                 </head>
 
+                
+                <div class="w3-top">
+                    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                        <a href="." class="w3-bar-item w3-button">Trivia Space</a>
+                        <div class="w3-right w3-hide-small">
+                        <a href="add.php" class="w3-bar-item w3-button">Admin</a>
+                        </div>
+                    </div>
+                </div>
+
                 <body style="background-color: #F1F7FC;">
                 <div class="login-clean">
                         <form action="login.php" method="post">
@@ -23,6 +33,13 @@
                 <script src="assets/js/jquery.min.js"></script>
                 <script src="assets/js/drop-zone-.js"></script>
                 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-                <!-- <script src="assets/js/bs-animation.js"></script> -->
                 </body>
 </html>
+
+<script>
+
+var finish = new Audio('assets/sounds/congratulations.mp3');
+finish.volume = 0.1;
+finish.play();
+
+</script>
