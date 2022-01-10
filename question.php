@@ -242,6 +242,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                deaths+=1
                 sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
@@ -267,6 +268,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                deaths+=1
                 sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
@@ -291,6 +293,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                deaths+=1
                 sound.play();
     		while (coins[level].length>j) {
     			coins[level][j]['collected']=0
@@ -315,6 +318,7 @@ function collide(x,y) {
                 player['x']=spawnpoints[level][0]
         	    player['y']=spawnpoints[level][1]
                 j=0
+                deaths+=1
                 sound.play();
                 
     		while (coins[level].length>j) {
